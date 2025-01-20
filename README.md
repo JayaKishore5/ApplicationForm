@@ -11,6 +11,93 @@ This application provides:
 
 ---
 
+## Project Sturcture Follows Bellow 
+
+## Configuration
+
+ SwaggerConfigurations: Sets up Swagger for API documentation, providing an interactive interface to test and explore the API.
+
+ WebSecurityConfig: Implements security protocols using Spring Security and JWT for secure authentication and authorization.
+
+---
+
+## Controller
+
+    Handles HTTP requests and maps them to appropriate services. Key controllers include:
+
+ GeneralParamsController: Provides endpoints for managing general metadata related to inventory and processes.
+
+ LoginController.java: Handles user authentication, issuing JWT tokens for secure access.
+
+ MasterController: Handles master data operations like user management, item categorization, and organizational details.
+
+ ProcessController: Manages workflows and their statuses.
+
+ TestController.java: A controller used for testing and debugging application features.
+
+ TransactionsController: Tracks and provides detailed transaction summaries and ledger data.
+
+---
+
+
+## DAO
+
+  The Data Access Layer interfaces with the database using JPA (Java Persistence API), enabling seamless data retrieval and persistence.
+
+---
+
+
+## Domain
+
+   Models request and response Data Transfer Objects (DTOs) for various entities like Login, Master, Process, etc. This separates internal logic from API payloads, enhancing modularity.
+
+---
+
+## Entity
+
+    Represents database tables as Java classes, allowing interaction with relational data. Examples include:
+
+UsersMaster: Represents user details.
+
+DepartmentMaster: Represents departmental data, etc.
+
+---
+
+
+##  Service
+
+    Contains the business logic of the application, abstracting it from controllers. Examples include:
+
+   GeneralParamsServiceImpl.java: Implements logic for managing general parameters, such as item types and categories.
+
+   LoginServiceImpl.java: Handles user authentication, including validation and token generation.
+
+   MasterServiceImpl.java: Provides business logic for master data management, such as creating and updating items, vendors, and locations.
+
+   ProcessServiceImpl.java: Implements workflows, including the creation and management of GRNs, inspection reports, and acceptance notes.
+
+   TxnsServiceImpl.java: Handles transactional operations, such as fetching transaction summaries and stock ledger data.
+
+---
+
+
+## Repository
+
+  Defines repository interfaces for interacting with the database. These interfaces extend JPA repositories, providing methods for CRUD operations.
+
+---
+
+
+## Utilities
+
+  Contains common helper classes, constants, and utility functions for shared operations. Examples include:
+
+  ApplicationConstant: Stores application-wide constant values.
+
+  ResponseBuilder: Simplifies the construction of standardized API responses.
+
+
+
 ## Technologies Used
 - **Java**: Core development language.
 - **Spring Boot**: Framework for rapid development and scalability.
@@ -98,7 +185,7 @@ The `pom.xml` file is a Maven configuration file used to manage project dependen
 
 ---
 
-## Controllers
+## Controllers And Their Apis:-
 
 ### **GeneralParamsController**
 ## **POST Endpoints**
